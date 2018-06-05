@@ -1,0 +1,65 @@
+.navbar {
+    background-color: cadetblue;
+    height: 49px;
+    padding-top: 1px;
+}
+main {
+    color: cadetblue;
+    max-width: 100%;
+}
+body {
+    max-width: 100%;
+}
+submits {
+    background-color: cadetblue;
+}
+.login {
+    width: 98%;
+    margin-left: 10px;
+}
+#navblank {
+    width: 65%;
+    height: 49px;
+}
+body {
+    background-image: url("../images/what-the-hex-dark.png");
+    max-height: 100vh;
+}
+.card {
+    height: 250px;
+}
+.vendor {
+    background-color: rgb(35, 75, 204);
+}
+.event {
+    background-color: rgb(132, 27, 158);
+}
+.landing {
+    margin-top : 10px;
+    background-color: cadetblue;
+}
+.hoverV {
+    background-color: rgb(62, 93, 197);
+}
+.hoverE {
+    background-color: rgb(141, 45, 165);
+}
+#pDesc {
+    height: 150px;
+}
+.footer {
+    min-height: 15vh;
+    position: absolute;
+    bottom: 0;
+    margin-left: -8px;
+    width: 100%;
+    padding: 10px;
+    min-height: 8vh;
+    background-color: cadetblue;
+}
+.header {
+    min-height: 15vh;
+}
+a {
+    text-decoration: inherit;
+}
