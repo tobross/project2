@@ -23,12 +23,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Static directory
-// app.use(express.static("public"));
+app.use(express.static("htmlPages"));
 
 // Routes
 // =============================================================
-require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
+require("./routes/user-api-routes.js")(app);
+require("./routes/event-api-route.js")(app);
 
 
 
