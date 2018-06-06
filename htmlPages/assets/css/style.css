@@ -49,12 +49,9 @@ body {
     height: 150px;
 }
 .footer {
-    /* min-height: 15vh; */
     position: absolute; 
     bottom: 0;
-    /* margin-left: -8px; */
     width: 100%;
-    /* padding: 10px; */
     min-height: 8vh;
     background-color: cadetblue;
 }

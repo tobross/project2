@@ -10,6 +10,7 @@ module.exports = function(app) {
   //   "description": "Come have fun!"
   // }
 
+  //I did not change this /api/login route. If it needs to lead to the signup page, it should be updated to /api/signup. - Katya
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("/api/events");
   });

@@ -4,14 +4,12 @@ $(document).ready(function () {
     $("#nextEvents").on("click", function (event) {
         event.preventDefault();
         nextPage ++;
-
         loadResults();  
     }); 
 
     $("#previousEvents").on("click", function (event) {
         event.preventDefault();
         nextPage --;
-
         loadResults();  
     }); 
 
@@ -19,7 +17,6 @@ $(document).ready(function () {
         $("#eventsCard").empty();
 
         var eventCategoryInput = $("#category").val();
-
         if ($("#category").val())
         eventCategoryInput += $("#category").val();
     };
