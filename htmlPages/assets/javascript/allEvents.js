@@ -2,6 +2,12 @@ $(document).ready(function () {
     var num_searches = 0;
     var nextPage = 1;
 
+    $.get("/api/events", function(data) {
+        for(var i = 0; i < data.length; i++) {
+            console.log(data[i]);
+        }
+    });
+
     $("#nextEvents").on("click", function (event) {
         event.preventDefault();
         nextPage ++;

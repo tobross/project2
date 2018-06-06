@@ -17,4 +17,8 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     res.sendFile(path.join(__dirname, "../htmlPages/login.html"));
   });
+
+  app.get("/all-events", function(req, res) {
+    res.sendFile(path.join(__dirname, "../htmlPages/all-events.html"));
+  });
 }
