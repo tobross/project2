@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $(".button-primary").on("click", test);
+    // $(".button-primary").on("click", test);
 
     // function test(event) {
     //     event.preventDefault();
