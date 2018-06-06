@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    var num_searches = 0;
     var nextPage = 1;
 
     $.get("/api/events", function(data) {
@@ -23,24 +22,11 @@ $(document).ready(function () {
     }); 
 
     function loadResults(){
-        $("#recipeCard").empty();
+        $("#eventsCard").empty();
 
-        var recipeSearchInput = $("#dish-input").val();
+        var eventCategoryInput = $("#category").val();
 
-        if ($("#ingredient-input").val())
-            recipeSearchInput += "%20" + $("#ingredient-input").val();
-
-        if ($("#cuisine-input").val())
-            recipeSearchInput += "%20" + $("#cuisine-input").val();
-        
-        var recipeObject = {
-            input1: $("#dish-input").val(),
-            input2: $("#ingredient-input").val(),
-            input3: $("#cuisine-input").val()
-        }
-        firebase.database().ref().push({
-             recipeObject
-        })
+        if ($("#category").val())
+        eventCategoryInput += $("#category").val();
     };
-
 });
