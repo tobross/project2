@@ -2,6 +2,7 @@
     background-color: cadetblue;
     height: 49px;
     padding-top: 1px;
+    margin-bottom: 15px;
 }
 main {
     color: cadetblue;
@@ -48,15 +49,16 @@ body {
     height: 150px;
 }
 .footer {
-    min-height: 15vh;
-    position: absolute;
+    /* min-height: 15vh; */
+    position: absolute; 
     bottom: 0;
-    margin-left: -8px;
+    /* margin-left: -8px; */
     width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
     min-height: 8vh;
     background-color: cadetblue;
 }
+
 .header {
     min-height: 15vh;
 }
