@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 // Routes
 // =============================================================
-require("./routes/user-api-route.js")(app);
+require("./routes/user-api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 
