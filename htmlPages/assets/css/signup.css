@@ -1,6 +1,6 @@
 body, html {
   width: 100%;
-  height: 90%;
+  height: 100%;
   font-family: 'Raleway', sans-serif;
   background-color: #fff;
   color: #000;
@@ -8,8 +8,9 @@ body, html {
 }
 
 header {
-  background-image: url('../images/roman-kraft-208004-unsplash.jpg');
+  background-image: url("../images/signuppink.jpg");
   background-size: cover;
+  background-blend-mode: luminosity;
   width: 100%;
   height: 100%;
   color: rgb(0, 0, 0);
@@ -62,20 +63,23 @@ h3 {
 #logoBox {
   width: 30vw;
   padding-top: 50px;
+  min-width: 300px;
 
 
 }
 #whiteSpace {
   margin: 0 auto;
-  width: 80vw;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   border-radius: 30px;
   /* background-color: #fff; */
   background-image: url('../images/whitetexture3.png');
   background-size: cover;
+  
   color: #000;
   text-align: center;
-  padding-top: 15px;
+  margin-top: 20px;
+  padding: 5px 30px 5px;
   font-size: 1em;
   background-blend-mode: luminosity;
   filter: brightness(99%);
