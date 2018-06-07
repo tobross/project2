@@ -2,74 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.css' />
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <title>Market to Market</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/skeleton.css">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <title>Market to Market - User Login</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
 </head>
 
 <body>
-    <div class="row navbar">
-        <div class="two columns navbar" id="logo">
-            <img src="/assets/images/m2m.png" alt="logo" height="45" width="45">
-        </div>
-        <div class="eight columns navbar" id="navblank">
-            <h3>User Login</h3>
-        </div>
-        <div class="two columns navbar" id="Nav">
-            <select class="u-full-width" id="navigation">
-                <option class="option" value="pick">Navigate to:</option>
-                <option class="option" value="home">Home</option>
-                <option class="option" value="events">Events</option>
-                <option class="option" value="vendors">Vendors</option>
-            </select>
-        </div>
-    </div>
-    <main>
-        <div class="container">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="columns" id="whiteSpace">
+          <img src="./assets/images/logo2distress.png" id="logoBox" alt="">
+          <main>
             <div class="row">
-                <div class="twelve columns">
-                    <p>Logint to access your account.</p>
-                </div>
+              <div class="columns">
+              
+              </div>
             </div>
-
             <div class="row">
-                <div class="twelve columns">
-                    <form>
-                        <div class="row">
-                            <div class="six columns">
-                                <label for="loginName">User Name</label>
-                                <input class="u-full-width" type="text" placeholder="Enter your user name or e-mail" id="loginName">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="six columns">
-                                <label for="loginPassword">Password</label>
-                                <input class="u-full-width" type="password" id="loginPassword">
-                            </div>
-                        </div>
-                        <input class="button-primary" id="submits" type="submit" value="Submit">
-                    </form>
-                </div>
+              <div class="columns">
+                <form>
+                  <div class="row">
+                    <div class=" ten columns offset-by-one">
+                      <label for="loginName">User Name</label>
+                      <input class="u-full-width" type="text" placeholder="Username or E-mail" style="text-align: center" id="loginName">
+                    </div>
+                  </div>
+                  <div class="row">
+                    
+                    <div class="ten columns offset-by-one">
+                      <label for="loginPassword">Password</label>
+                      <input class="u-full-width" type="password" id="loginPassword">
+                    </div>
+                  </div>
+                  <input class="button-primary" id="submits" type="submit" value="Submit">
+                </form>
+              </div>
             </div>
         </div>
-    </main>
-
-    <div class="footer">
-        <div class="row">
-            <div class="two columns"></div>
-            <div class="eight columns">
-                <h6>Market to Market © Group Best 2018</h6>
-            </div>
-            <div class="two columns"></div>
-        </div>
+        </main>
+      </div>
     </div>
-    <script src="/assets/javascript/login.js"></script>
+  </header>
+
+
+
+<div class="footer"><footer>Market to Market &copy 2018</footer></div>
+  
+
+
+  <script src="/assets/javascript/login.js"></script>
 </body>
 
 </html>
