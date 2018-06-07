@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var eventTitle = $("#eventTitle");
     var eventDate = $("#eventDate");
@@ -20,14 +20,24 @@ $(document).ready(function() {
 
     $("#navigation").on("change", function() {
         console.log("redirect func running");
-      if (this.value === "events") {
-          window.location = "event.html"
-      }
-     else if (this.value === "vendors") {
-         window.location = "vendor.html"
-     }
-     else {
-         window.location = "landing.html"
-     }
+        if (this.value === "events") {
+            if (userID) {
+                window.location = "event.html"
+            } else {
+                window.location = "login.html"
+            }
+        } else if (this.value === "vendors") {
+            if (userID) {
+                window.location = "vendor.html"
+            } else {
+                window.location = "login.html"
+            }
+        } else if (this.value === "home") {
+            if (userID) {
+                window.location = "landing.html"
+            } else {
+                window.location = "login.html"
+            }
+        }
     });
 });

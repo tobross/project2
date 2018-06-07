@@ -1,7 +1,7 @@
 {
   "name": "post-author-joins",
   "version": "1.0.0",
-  "description": "",
+  "description": "<img src=\"https://raw.githubusercontent.com/tobross/project2/master/htmlPages/assets/images/logo.png\" alt=\"drawing\" style=\"display:block; margin: auto auto\" width=\"400px\"/>",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,5 +21,14 @@
     "passport-local": "^1.0.0",
     "passport-openid": "^0.4.0",
     "sequelize": "^4.3.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobross/project2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tobross/project2/issues"
+  },
+  "homepage": "https://github.com/tobross/project2#readme"
 }
