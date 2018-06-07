@@ -14,6 +14,7 @@ module.exports = function(app) {
   // app.post("/api/login", passport.authenticate("local"), function(req, res) {
   //   res.json("/api/events");
   // });
+  
 
   app.get("/api/events", function(req, res) {
     db.Event.findAll({}).then(function(result) {
@@ -23,9 +24,11 @@ module.exports = function(app) {
 
 
   app.post("/api/events", function(req, res) {
+    console.log(req.user);
     db.Event.create({
       // Look into a pointer in sequelize
       // UserId: current user id
+      UserId: req.user.id,
       eventName: req.body.eventName,
       date: req.body.date,
       location: req.body.location,

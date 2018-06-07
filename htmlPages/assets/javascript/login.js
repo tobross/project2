@@ -3,6 +3,9 @@ $(document).ready(function () {
     var emailInput = $("#loginName");
     var passwordInput = $("#loginPassword");
 
+    emailInput.val("foo@bar.com");
+    passwordInput.val("password");
+
     $("#submits").on("click", function (event) {
         event.preventDefault();
 
@@ -30,8 +33,6 @@ $(document).ready(function () {
             console.log(data);
             console.log("did this work");
             window.location.replace(data);
-        }).catch(function(err) {
-            console.log(err);
         });
     }
 

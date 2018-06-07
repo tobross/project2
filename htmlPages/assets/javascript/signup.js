@@ -9,16 +9,31 @@ $(document).ready(function () {
                 var email = $("#emailInput").val().trim();
                 var password = $("#password").val().trim();
 
+                var username = firstName + " " + lastName;
+
                 console.log(firstName);
                 console.log(lastName);
+                console.log(username);
                 console.log(email);
                 console.log(password);
+
+                addUser(username, email, password);
 
         } else {
             console.log("failed validation");
         }
 
     });
+
+    function addUser(username, email, password) {
+        $.post("/api/users", {
+            username: username,
+            email: email,
+            password: password
+        }).then(function(data) {
+            console.log(data)
+        });
+    }
 
     // function test(event) {
     //     event.preventDefault();
