@@ -38,6 +38,7 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 require("./routes/user-api-routes.js")(app);
 require("./routes/event-api-route.js")(app);
+require("./routes/product-api-routes.js")(app);
 
 
 
@@ -46,5 +47,17 @@ require("./routes/event-api-route.js")(app);
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  });
+  db.User.create({
+    "username": "usernameTest",
+    "password": "password",
+    "email": "foo@bar.com",
+    "phone": "1234567890",
+    "companyName": "Test Company Name",
+    "website": "http://foobar.com"
+  }).then(function(dbResponse){
+    console.log("added test user");
+  }).catch(function(err) {
+    console.log(err);
   });
 });

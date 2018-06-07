@@ -12,11 +12,28 @@ $(document).ready(function () {
         console.log(eventTitle.val().trim());
         console.log(eventDate.val().trim());
         console.log(eventLocation.val().trim());
-        console.log(eventCategory.val().trim());
-        console.log(eventImg);
+        // console.log(eventCategory.val().trim());
+        // console.log(eventImg);
         console.log(eventDetails.val().trim());
 
+        addEvent(eventTitle, eventDate, eventLocation, eventDetails);
+
+        // console.log(req.user.id);
+
     });
+
+    function addEvent(eventTitle, eventDate, eventLocation, eventDetails) {
+        $.post("/api/events", {
+            eventName: eventTitle.val().trim(),
+            date: eventDate.val().trim(),
+            location: eventLocation.val().trim(),
+            description: eventDetails.val().trim()
+        }).then(function(data){
+            console.log(data);
+        }).catch(function(err){
+            console.log(err);
+        });
+    }
 
     $("#navigation").on("change", function() {
         console.log("redirect func running");
