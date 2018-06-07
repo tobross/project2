@@ -9,10 +9,14 @@ module.exports = function(app) {
   });
 
   app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../htmlPages/userLogin.html"));
+    res.sendFile(path.join(__dirname, "../htmlPages/login.html"));
   });
 
-  // ***** REQUIRES LOGIN TO *****
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../htmlPages/signup.html"));
+  });
+
+  // ***** REQUIRES LOGIN *****
 
   app.get("/event", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../htmlPages/event.html"));
