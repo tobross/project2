@@ -1,6 +1,9 @@
 $(document).ready(function () {
     var nextPage = 1;
 
+    var appendEvent = function() {
+        $(".eventList").append(eventCard);
+    };
     var eventName = "";
     var location = "";
     var date = "";
@@ -8,7 +11,16 @@ $(document).ready(function () {
 
     $.get("/api/events", function(data) {
         for(var i = 0; i < data.length; i++) {
-            console.log(data[i]);
+
+            var eventCard = "<div class='card'>"+
+    "<img class='eventimg' src='"+ db.event[i].image +"' alt='image'>"+
+    "<h6 class='eventName'><b>"+ db.event[i].name +"</b></h6>"+
+    "<p class='eventLoc'>Location: "+ db.event[i].location +"</p>"+
+    "<p class='eventDate'>Date: "+ db.event[i].date +"</p>"+
+    "<p class='eventDesc'>Description: "+ db.event[i].description +".</p>"+
+"</div>";
+
+         appendEvent();
         }
     });
 

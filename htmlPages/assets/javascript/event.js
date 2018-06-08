@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     var eventTitle = $("#eventTitle");
     var eventDate = $("#eventDate");
