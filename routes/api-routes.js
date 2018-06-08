@@ -1,4 +1,5 @@
 var passport = require("../config/passport");
+var theRoute = "";
 
 // Requiring our models
 var db = require("../models");
@@ -8,8 +9,7 @@ module.exports = function (app) {
     app.post("/api/login", passport.authenticate("local", {
         failureRedirect: "/login-failureRedirect"
     }), function (req, res) {
-        console.log(req.user.id);
-        res.json("/");
+        res.json(theRoute);
     });
 
     // Route for logging user out
@@ -17,5 +17,19 @@ module.exports = function (app) {
         req.logout();
         res.redirect("/");
     });
+    
+    app.get("/api/route-getter/:route", function(req, res) {
+        theRoute = "/" + req.params.route;
+        console.log("theRoute");
+        console.log(theRoute);
+        console.log("theRoute");
+    });
+
+    // app.get("/api/route-getter/:route", function(req, res) {
+    //     theRoute = "/" + req.params.route;
+    //     console.log("theRoute");
+    //     console.log(theRoute);
+    //     console.log("theRoute");
+    // });
 
 }

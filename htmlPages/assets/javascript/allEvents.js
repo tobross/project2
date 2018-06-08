@@ -1,6 +1,8 @@
 $(document).ready(function () {
     var nextPage = 1;
 
+    var eventCard;
+
     var appendEvent = function() {
         $(".eventList").append(eventCard);
     };
@@ -9,20 +11,41 @@ $(document).ready(function () {
     var date = "";
     var description = "";
 
-    $.get("/api/events", function(data) {
-        for(var i = 0; i < data.length; i++) {
 
-            var eventCard = "<div class='card'>"+
-    "<img class='eventimg' src='"+ db.event[i].image +"' alt='image'>"+
-    "<h6 class='eventName'><b>"+ db.event[i].name +"</b></h6>"+
-    "<p class='eventLoc'>Location: "+ db.event[i].location +"</p>"+
-    "<p class='eventDate'>Date: "+ db.event[i].date +"</p>"+
-    "<p class='eventDesc'>Description: "+ db.event[i].description +".</p>"+
-"</div>";
+    function testing() {
+        console.log("THIS IS THE TESTING FUNC");
+        $.get("/api/events" ,function(data) {
+            console.log("THIS IS DATA");
+            for(var i = 0; i < data.length; i ++) {
+                console.log(data[i]);
+                eventCard = "<div class='card'>"+
+                "<img class='eventimg' src='"+ data[i].image +"' alt='image'>"+
+                "<h6 class='eventName'><b>"+ data[i].eventName +"</b></h6>"+
+                "<p class='eventLoc'>Location: "+ data[i].location +"</p>"+
+                "<p class='eventDate'>Date: "+ data[i].date +"</p>"+
+                "<p class='eventDesc'>Description: "+ data[i].description +".</p>"+
+            "</div>";
+            
+                     appendEvent();
+            }
+        });
+    }
+    testing();
 
-         appendEvent();
-        }
-    });
+//     $.get("/api/events", function(data) {
+//         for(var i = 0; i < data.length; i++) {
+
+//             var eventCard = "<div class='card'>"+
+//     "<img class='eventimg' src='"+ db.event[i].image +"' alt='image'>"+
+//     "<h6 class='eventName'><b>"+ db.event[i].name +"</b></h6>"+
+//     "<p class='eventLoc'>Location: "+ db.event[i].location +"</p>"+
+//     "<p class='eventDate'>Date: "+ db.event[i].date +"</p>"+
+//     "<p class='eventDesc'>Description: "+ db.event[i].description +".</p>"+
+// "</div>";
+
+//          appendEvent();
+//         }
+//     });
 
     $("#nextEvents").on("click", function (event) {
         event.preventDefault();
