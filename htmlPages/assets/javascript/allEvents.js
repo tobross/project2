@@ -1,6 +1,11 @@
 $(document).ready(function () {
     var nextPage = 1;
 
+    var eventName = "";
+    var location = "";
+    var date = "";
+    var description = "";
+
     $.get("/api/events", function(data) {
         for(var i = 0; i < data.length; i++) {
             console.log(data[i]);
