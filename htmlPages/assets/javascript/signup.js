@@ -31,28 +31,17 @@ $(document).ready(function () {
             email: email,
             password: password
         }).then(function(data) {
-            console.log(data)
+            console.log("Logging user in");
+            $.post("/api/login", {
+                email: email,
+                password: password
+            }).then(function(data) {
+                console.log(data);
+                console.log("did this work");
+                window.location.replace(data);
+            });
         });
     }
-
-    // function test(event) {
-    //     event.preventDefault();
-    //     var firstName = $("#firstName").val().trim();
-    //     var lastName = $("#lastName").val().trim();
-    //     var email = $("#exampleEmailInput").val().trim();
-    //     var password = $("#password").val().trim();
-
-    //     console.log(firstName);
-    //     console.log(lastName);
-    //     console.log(email);
-    //     console.log(password);
-
-    //     $.post("api/users", {
-    //         username: firstName + lastName,
-    //         password: password,
-    //         email: email
-    //     },  );
-    // }
 
     function validateForm() {
 

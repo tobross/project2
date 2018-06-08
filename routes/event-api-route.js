@@ -14,7 +14,7 @@ module.exports = function(app) {
   // app.post("/api/login", passport.authenticate("local"), function(req, res) {
   //   res.json("/api/events");
   // });
-  
+
 
   app.get("/api/events", function(req, res) {
     db.Event.findAll({}).then(function(result) {

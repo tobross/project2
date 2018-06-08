@@ -4,6 +4,10 @@ $(document).ready(function () {
     var appendEvent = function() {
         $(".eventList").append(eventCard);
     };
+    var eventName = "";
+    var location = "";
+    var date = "";
+    var description = "";
 
     $.get("/api/events", function(data) {
         for(var i = 0; i < data.length; i++) {

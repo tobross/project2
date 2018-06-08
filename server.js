@@ -21,14 +21,20 @@ var db = require("./models");
 // Sets up the Express app to handle data parsing
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 // parse application/json
 app.use(bodyParser.json());
 
 // Static directory
 app.use(express.static("htmlPages"));
 
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(require('express-session')({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -41,11 +47,12 @@ require("./routes/event-api-route.js")(app);
 require("./routes/product-api-routes.js")(app);
 
 
-
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync({
+  force: true
+}).then(function () {
+  app.listen(PORT, function () {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
   db.User.create({
@@ -55,9 +62,9 @@ db.sequelize.sync({ force: true }).then(function() {
     "phone": "1234567890",
     "companyName": "Test Company Name",
     "website": "http://foobar.com"
-  }).then(function(dbResponse){
+  }).then(function (dbResponse) {
     console.log("added test user");
-  }).catch(function(err) {
+  }).catch(function (err) {
     console.log(err);
   });
 });
