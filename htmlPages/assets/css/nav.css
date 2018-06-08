@@ -2,6 +2,7 @@
 
 .navbar {
   width: 100vw;
+  height: 43px;
   background-color: #FFEDE5;
  background-image: url(../images/h1background.png);
  background-blend-mode: luminosity;
@@ -10,7 +11,7 @@
  filter: drop-shadow(10px 10px 30px #000000b9);
 }
 #homeIcon, #userIcon, #eventIcon, #exitIcon {
-padding: 10px 5px 5px;
+/* padding: 10px 5px 5px; */
 margin: 0px;
 height: 30px;
 width: 30px;
@@ -23,25 +24,38 @@ transition: width 2s;
 
 #homeIcon:hover, #userIcon:hover, #eventIcon:hover, #exitIcon:hover {
  filter: invert(50%);
- width: 300px;
+ /* width: 300px; */
 
 }
-/* .homeIconAni{
-  height: 31px;
+ .homeIconAni {
+   padding: 5px 0px 10px 0px;
+  height: 30px;
   width: 30px;
-  background: #eb0b0bce;
+  -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+transition: width 1s;
+position: relative;
+float: left;
+color: #2c2c2c;
+}
+#textNav {
+ position: relative;
+ top: -3px;
+
 }
 
-
+.homeIconAni:hover, .icon2, .icon3, .icon4 {
+  width: 100px;
+}
+/* 
 .homeIconAni:hover {
   height: 30px;
   width: 200px;
   filter: invert(50%);
-  } */
+  }  */
 
 header{
   width: 100%;
-  height: 50px;
+  height: 35px;
 }
 .notHeader {
   background-image: url('../images/test.jpg');
@@ -59,4 +73,5 @@ filter: blur(40%);
 filter: contrast(90%);
 margin-bottom: 50px;
 filter: drop-shadow(5px 5px 15px #0000009a);
+
 }
