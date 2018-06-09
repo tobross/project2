@@ -6,7 +6,6 @@ body, html {
   color: #000;
   min-height: 100%;
 }
-
 header {
   background-image: url('../images/loginpink.jpg');
   background-size: cover;
@@ -23,9 +22,8 @@ header {
   filter: contrast(90%);
   margin-bottom: 0px;
   filter: drop-shadow(5px 5px 15px #0000009a);
+  padding-top:5%;
 }
-
-
 h1 {
   color: rgb(22, 22, 22);
   text-shadow: rgb(133, 133, 130) 2px 2px;
@@ -57,14 +55,10 @@ h3 {
   display: block;
   font-size: 2.5em;
 }
-
-
 #logoBox {
   width: 25vw;
   padding-top: 50px;
   max-width: 350px;
-
-
 }
 #whiteSpace {
   margin: 0 auto;
@@ -83,7 +77,6 @@ h3 {
   filter: blur(.5px);
   filter: drop-shadow(30px 30px 30px #000000b9);
 }
-
 #introduction{
   margin-top: 200px;
   max-height: fit-content;
@@ -94,7 +87,6 @@ h3 {
   font-weight: 200;
   text-align: center;
 }
-
 #landingBox\ blue, #landingBox\ pink  {
 height: 35vh;
 margin-bottom: 200px;
@@ -114,7 +106,6 @@ margin: 0 auto 20px;
 #landingBox\ pink {
   background-color: #DAE0E9;
 }
-
 footer {
   text-align: center;
   background-color: rgb(196, 157, 140);

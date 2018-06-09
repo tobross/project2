@@ -3,57 +3,84 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/skeleton.css">
-    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Market to Market - User Login</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="parsley.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <!-- Favicon–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="shortcut icon" type="image/png" href="./assets/images/marketMT.png">
 </head>
 
 <body>
     <header>
+        <form id = "loginForm">
         <div class="container">
-            <div class="row">
-                <div class="ten columns offset-by-one" id="whiteSpace">
+            <div class="columns">
+                <div class="column" id="whiteSpace">
                     <img src="./assets/images/logo2distress.png" id="logoBox" alt="">
-                    <main>
-                        <div class="row">
-                            <div class="ten columns offset-by-one">
-                                <form>
-                                    <label for="loginName">User Name</label>
-                                    <input class="u-full-width" type="text" placeholder="Username or E-mail" style="text-align: center" id="loginName">
+
+                    <div class="columns is-centered">
+                        <div class="column is-half">
+                            <label for="loginName"><strong>Username</strong></label>
+
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control has-icons-left">
+                                        <input class="input is-dark form-control" type="text" placeholder="Username or E-mail" style="text-align: center" id="loginName" required="">
+                                        <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" style="display: none" id="loginNameHelp">This field is required</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="ten columns offset-by-one">
-                                <label for="loginPassword">Password</label>
-                                <input class="u-full-width" type="password" id="loginPassword">
+                    </div>
+
+                    <div class="columns is-centered">
+                        <div class="column is-half">
+                            <label for="loginPassword"><strong>Password</strong></label>
+
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control has-icons-left">
+                                        <input class="input is-dark" type="password" id="loginPassword">
+                                        <span class="icon is-small is-left">
+                                        <i class="fas fa-lock"></i>
+                                        </span>
+                                    </div>
+                                    <p class="help is-danger" id="loginPasswordHelp" style="display: none">This field is required</p>
+                                </div>
                             </div>
                         </div>
-                        <input class="button-primary" id="submits" type="submit" value="Submit">
-                        </form>
-                        Are you a new user?
-                        <a href="/signup">Sign up here</a>
-                    </main>
+                    </div>
+                    <div class="columns">
+                        <div class="column">
+                            <input class="button is-dark" id="submits" type="submit" value="Submit">
+                            Are you a new user?
+                            <a href="/signup">Sign up here</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-       
+    </form>
+
     </header>
 
+    <footer>
+        <div class="container">
+          <div class="content has-text-centered">
+            <p>Market to Market &copy 2018</p>
+          </div>
+        </div>
+    </footer>
 
-
-    <div class="footer">
-        <footer>Market to Market &copy 2018</footer>
-    </div>
-
-
-
-    <script src="./assets/javascript/login.js"></script>
+    <script src="assets/javascript/login.js"></script>
 </body>
 
 </html>
