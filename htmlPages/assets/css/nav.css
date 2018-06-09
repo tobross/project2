@@ -1,6 +1,8 @@
 
 
 .navbar {
+  position: relative;
+  z-index: 3;
   width: 100vw;
   height: 40px;
   background-color: #FFEDE5;
@@ -18,8 +20,13 @@ width: 30px;
 filter: contrast(100%);
 /* background: #0000001e; */
 /* testing animations */
--webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
-transition: width 2s;
+
+-webkit-transition: all 1s ease-in-out;
+-moz-transition: all 1s ease-in-out;
+-o-transition: all 1s ease-in-out;
+transition: all 1s ease-in-out;
+transition: all 1s ease-in-out;
+
 }
 
 #homeIcon:hover, #userIcon:hover, #eventIcon:hover, #exitIcon:hover {
@@ -72,6 +79,8 @@ header {
   height: 35px !important;
 }
 .notHeader {
+  position: relative;
+  z-index: 4;
   background-image: url('../images/test.jpg');
 background-size: cover;
 width: 100%;
