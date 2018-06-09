@@ -91,8 +91,15 @@ flex-direction: column;
 margin: 0 auto 20px;
 }
 #landingBox\ blue {
-  background-color: #FFEDE5;
+  background-color: #DAE0E9;
+}
+#landingBox\ blue:hover {
+  filter: drop-shadow(1px 1px 10px #00000065);
+}
+#landingBox\ pink:hover {
+  filter: drop-shadow(1px 1px 10px #00000065);
 }
 #landingBox\ pink {
-  background-color: #DAE0E9;
+  background-color: #FFEDE5;
+
 }

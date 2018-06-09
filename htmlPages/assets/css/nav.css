@@ -2,7 +2,7 @@
 
 .navbar {
   width: 100vw;
-  height: 43px;
+  height: 40px;
   background-color: #FFEDE5;
  background-image: url(../images/h1background.png);
  background-blend-mode: luminosity;
@@ -25,8 +25,10 @@ transition: width 2s;
 #homeIcon:hover, #userIcon:hover, #eventIcon:hover, #exitIcon:hover {
  filter: invert(50%);
  /* width: 300px; */
-
+    
 }
+
+
  .homeIconAni {
    padding: 5px 0px 10px 0px;
   height: 30px;
@@ -37,9 +39,21 @@ position: relative;
 float: left;
 color: #2c2c2c;
 }
-#textNav {
+#homeText, #userText, #eventsText, #logoutText {
  position: relative;
- top: -3px;
+ line-height: 20px;
+ top: -4px;
+ z-index: 1;
+ font-size: 13px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #000;
+  text-decoration: none;
 
 }
 
@@ -53,9 +67,9 @@ color: #2c2c2c;
   filter: invert(50%);
   }  */
 
-header{
+header {
   width: 100%;
-  height: 35px;
+  height: 35px !important;
 }
 .notHeader {
   background-image: url('../images/test.jpg');
