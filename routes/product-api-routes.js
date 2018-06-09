@@ -33,7 +33,6 @@ module.exports = function(app) {
       UserId: req.user.id,
       vendorName: req.body.vendorName,
       productName: req.body.productName,
-      category: req.body.category,
       description: req.body.description
     }).then(function(result) {
       res.json(result);

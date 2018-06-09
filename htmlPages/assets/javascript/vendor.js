@@ -30,7 +30,6 @@ $(document).ready(function () {
         $.post("/api/products", {
             vendorName: vendorName,
             productName: productName,
-            category: category,
             description: description
         }).then(function (data) {
             // Logging data to the console for giggles
