@@ -1,7 +1,8 @@
-var bcrypt = require("bcrypt-nodejs");
-
-module.exports = (function(sequelize, DataTypes) {
+module.exports = (function (sequelize, DataTypes) {
   var Product = sequelize.define("Product", {
+    vendorName: {
+      type: DataTypes.STRING
+    },
     productName: {
       type: DataTypes.STRING
     },
@@ -12,5 +13,13 @@ module.exports = (function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   });
+
+  Product.associate = function (models) {
+    Product.belongsTo(models.User, {
+      // foreignKey: {
+      // allowNull: false
+      // }
+    });
+  }
   return Product;
 });

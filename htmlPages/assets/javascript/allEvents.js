@@ -1,69 +1,79 @@
 $(document).ready(function () {
     var nextPage = 1;
 
-    var eventCard;
-
-    var appendEvent = function() {
-        $(".eventList").append(eventCard);
-    };
-    var eventName = "";
-    var location = "";
-    var date = "";
-    var description = "";
+    var eventsGoHere = $(".eventList");
+    var eventName;
+    var eventLocation;
+    var eventDate;
+    var eventDescription;
 
 
-    function testing() {
-        console.log("THIS IS THE TESTING FUNC");
-        $.get("/api/events" ,function(data) {
-            console.log("THIS IS DATA");
-            for(var i = 0; i < data.length; i ++) {
-                console.log(data[i]);
-                eventCard = "<div class='card'>"+
-                "<img class='eventimg' src='"+ data[i].image +"' alt='image'>"+
-                "<h6 class='eventName'><b>"+ data[i].eventName +"</b></h6>"+
-                "<p class='eventLoc'>Location: "+ data[i].location +"</p>"+
-                "<p class='eventDate'>Date: "+ data[i].date +"</p>"+
-                "<p class='eventDesc'>Description: "+ data[i].description +".</p>"+
-            "</div>";
-            
-                     appendEvent();
+    function buildEventCard() {
+        eventsGoHere.empty();
+        $.get("/api/events", function (data) {
+            for (var i = 0; i < data.length; i++) {
+
+                // Creating the rows that will be in the event card
+                // Row One
+                var rowOne = $("<div>");
+                rowOne.addClass("row");
+                // Row Two
+                var rowTwo = $("<div>");
+                rowTwo.addClass("row");
+                // Row Three
+                var rowThree = $("<div>");
+                rowThree.addClass("row");
+                // Row Four
+                var rowFour = $("<div>");
+                rowFour.addClass("row");
+
+                // Creates the innards of the event card
+                var cardInside = $("<div>");
+                cardInside.addClass("row cardWrpper");
+
+                // Creates the wrapper that will hold the description
+                var descriptionWrapper = $("<div>");
+                descriptionWrapper.addClass("descriptionWrapper");
+
+                // Creates the event name div with text (data)
+                var eventName = $("<div>");
+                eventName.addClass("eventName");
+                eventName.text(data[i].eventName);
+                // Creates the event location div with text (data)
+                var eventLocation = $("<div>");
+                eventLocation.addClass("eventLocation");
+                eventLocation.text(data[i].location);
+                // Creates the event date div with text (data)
+                var eventDate = $("<div>");
+                eventDate.addClass("eventDate");
+                eventDate.text(data[i].date);
+                // Creates the event descriptoin div with text (data)
+                var eventDescription = $("<div>");
+                eventDescription.addClass("nine columns eventDescription");
+                eventDescription.text(data[i].description);
+
+                var sponsorButton = $("<button>");
+                sponsorButton.addClass("three columns sponsor-button");
+                sponsorButton.text("Sponsor");
+
+                descriptionWrapper.append(eventDescription);
+
+                rowOne.append(eventName);
+                rowTwo.append(eventLocation);
+                rowThree.append(eventDate);
+                rowFour.append(descriptionWrapper);
+                rowFour.append(sponsorButton);
+
+                cardInside.prepend(rowOne);
+                cardInside.append(rowTwo);
+                cardInside.append(rowThree);
+                
+                cardInside.append(rowFour);
+
+                eventsGoHere.append(cardInside);
+
             }
         });
     }
-    testing();
-
-//     $.get("/api/events", function(data) {
-//         for(var i = 0; i < data.length; i++) {
-
-//             var eventCard = "<div class='card'>"+
-//     "<img class='eventimg' src='"+ db.event[i].image +"' alt='image'>"+
-//     "<h6 class='eventName'><b>"+ db.event[i].name +"</b></h6>"+
-//     "<p class='eventLoc'>Location: "+ db.event[i].location +"</p>"+
-//     "<p class='eventDate'>Date: "+ db.event[i].date +"</p>"+
-//     "<p class='eventDesc'>Description: "+ db.event[i].description +".</p>"+
-// "</div>";
-
-//          appendEvent();
-//         }
-//     });
-
-    $("#nextEvents").on("click", function (event) {
-        event.preventDefault();
-        nextPage ++;
-        loadResults();  
-    }); 
-
-    $("#previousEvents").on("click", function (event) {
-        event.preventDefault();
-        nextPage --;
-        loadResults();  
-    }); 
-
-    function loadResults(){
-        $("#eventsCard").empty();
-
-        var eventCategoryInput = $("#category").val();
-        if ($("#category").val())
-        eventCategoryInput += $("#category").val();
-    };
+    buildEventCard();
 });

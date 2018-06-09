@@ -13,6 +13,7 @@ module.exports = function(app) {
 
     db.Product.create({
       UserId: req.user.id,
+      vendorName: req.body.vendorName,
       productName: req.body.productName,
       category: req.body.category,
       description: req.body.description

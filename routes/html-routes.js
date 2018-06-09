@@ -16,6 +16,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../htmlPages/signup.html"));
   });
 
+  app.get("/mission", function(req, res) {
+    res.sendFile(path.join(__dirname, "../htmlPages/mission.html"));
+  });
+
   // ***** REQUIRES LOGIN *****
 
   app.get("/event", isAuthenticated, function(req, res) {
