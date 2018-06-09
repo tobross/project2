@@ -1,5 +1,8 @@
 module.exports = (function (sequelize, DataTypes) {
   var Product = sequelize.define("Product", {
+    vendorName: {
+      type: DataTypes.STRING
+    },
     productName: {
       type: DataTypes.STRING
     },
@@ -12,13 +15,11 @@ module.exports = (function (sequelize, DataTypes) {
   });
 
   Product.associate = function (models) {
-
     Product.belongsTo(models.User, {
       // foreignKey: {
-      //   allowNull: false
+      // allowNull: false
       // }
     });
   }
-
   return Product;
 });

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    // Getting the inputs using jQuery
     var eventTitle = $("#eventTitle");
     var eventDate = $("#eventDate");
     var eventLocation = $("#eventLocation");
@@ -7,45 +7,44 @@ $(document).ready(function () {
     var eventImg = $("#eventImg");
     var eventDetails = $("#eventDetails");
 
-    $(".button-primary").on("click", function(event) {
+    // When user adds a new event run this
+    $(".button-primary").on("click", function (event) {
         event.preventDefault();
-        console.log(eventTitle.val().trim());
-        console.log(eventDate.val().trim());
-        console.log(eventLocation.val().trim());
-        // console.log(eventCategory.val().trim());
-        // console.log(eventImg);
-        console.log(eventDetails.val().trim());
-
-        addEvent(eventTitle, eventDate, eventLocation, eventDetails);
-
-        // console.log(req.user.id);
-
-    });
-
-    function addEvent(eventTitle, eventDate, eventLocation, eventDetails) {
-        $.post("/api/events", {
+        // Setting eventData to the input values
+        var eventData = {
             eventName: eventTitle.val().trim(),
             date: eventDate.val().trim(),
             location: eventLocation.val().trim(),
+            category: eventCategory.val().trim(),
             description: eventDetails.val().trim()
-        }).then(function(data){
+        }
+        // Calling the addEvent function with the paramaters
+        // eventName, date, location, category, and description
+        addEvent(eventData.eventName, eventData.date, eventData.location, eventData.category, eventData.description);
+        // After addEvent is called the inputs are cleared
+        eventTitle.val("");
+        eventDate.val("");
+        eventLocation.val("");
+        eventCategory.val("");
+        eventDetails.val("");
+    });
+    // The addEvent function
+    function addEvent(eventName, date, location, category, description) {
+        // Post request that will hit the /api/events post request
+        $.post("/api/events", {
+            eventName: eventName,
+            date: date,
+            location: location,
+            category: category,
+            description: description
+        }).then(function (data) {
+            // Logging data to the console for giggles
             console.log(data);
+            // Redirecting the user to the all-events page
             window.location.replace("/all-events");
-        }).catch(function(err){
+        }).catch(function (err) {
+            // If an error occurs log it in the console
             console.log(err);
         });
     }
-
-    $("#navigation").on("change", function() {
-        console.log("redirect func running");
-      if (this.value === "events") {
-          window.location = "event.html"
-      }
-     else if (this.value === "vendors") {
-         window.location = "vendor.html"
-     }
-     else {
-         window.location = "landing.html"
-     }
-    });
 });
