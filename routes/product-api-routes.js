@@ -4,7 +4,25 @@ var passport = require("../config/passport");
 module.exports = function(app) {
 
   app.get("/api/products", function(req, res) {
+    currentUser = req.user;
     db.Product.findAll({}).then(function(result) {
+      res.json(result);
+    });
+  });
+
+  // ****** TESTING ******
+  app.get("/api/products/:user", function(req, res) {
+    var userParam = req.params.user;
+    var currentUserId = req.user.id
+    console.log("USER");
+    console.log(userParam);
+    console.log(currentUserId);
+    console.log("USER");
+    db.Product.findAll({
+      where: {
+        UserId: userParam
+      }
+    }).then(function(result) {
       res.json(result);
     });
   });
