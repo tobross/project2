@@ -30,6 +30,7 @@ $(document).ready(function () {
             description: eventDetails.val().trim()
         }).then(function(data){
             console.log(data);
+            window.location.replace("/all-events");
         }).catch(function(err){
             console.log(err);
         });
