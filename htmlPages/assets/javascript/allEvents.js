@@ -77,16 +77,17 @@ $(document).ready(function () {
                 vendorNameInput.attr("type", "text");
 
                 var productNameInput = $("<input>");
-                vendorNameInput.addClass("six columns");
-                vendorNameInput.attr("id", "product-name-input");
-                vendorNameInput.attr("type", "text");
+                productNameInput.addClass("six columns");
+                productNameInput.attr("id", "product-name-input");
+                productNameInput.attr("type", "text");
 
                 var description = $("<textarea>");
                 description.attr("id", "vendor-description");
 
                 var sponsorEventBtn = $("<button>");
                 sponsorEventBtn.attr("id", "sponsor-event-btn");
-                sponsorEventBtn.text("Sponsor Event")
+                sponsorButton.addClass("three columns sponsor-button");
+                sponsorEventBtn.text("Sponsor Event");
 
 
                 rowOne.append(eventName);
@@ -98,7 +99,7 @@ $(document).ready(function () {
                 cardInside.prepend(rowOne);
                 cardInside.append(rowTwo);
                 cardInside.append(rowThree);
-                
+
                 cardInside.append(rowFour);
 
                 rowFive.append(vendorNameInput);
@@ -113,15 +114,60 @@ $(document).ready(function () {
                 eventsGoHere.append(cardInside);
                 eventsGoHere.append(sponsorArea.hide());
 
-                $("#sponsor-button").on("click", function(event) {
-                    event.preventDefault();
-                    console.log("click");
-                    sponsorArea.show();
-                    sponsorButton.hide();
-                });
-
             }
+
+            $("#sponsor-button").on("click", function (event) {
+                event.preventDefault();
+                testing();
+            });
+
+            $("#sponsor-event-btn").on("click", function (event) {
+                event.preventDefault();
+                testing2();
+            });
         });
     }
     buildEventCard();
+
+    function testing() {
+        console.log("click");
+        $(".sopnsor-wrapper").show();
+        $("#sponsor-button").hide();
+    }
+
+    function testing2() {
+        console.log("HELLO");
+        var vName = $("#vendor-name-input");
+        var pName = $("#product-name-input");
+        var pDesc = $("#vendor-description");
+
+        // Setting vendorData to the input values
+        var vendorData = {
+            vendorName: vName.val().trim(),
+            productName: pName.val().trim(),
+            description: pDesc.val().trim()
+        }
+        console.log(vendorData);
+        // Calling the addProdcut function with the paramaters
+        // vendorName, productName, category, and description
+        addProduct(vendorData.vendorName, vendorData.productName, vendorData.description);
+        // After addProduct is called the inputs are cleared
+        vName.val("");
+        pName.val("");
+        pDesc.val("");
+    }
+    // The addProduct function
+    function addProduct(vendorName, productName, category, description) {
+        // Post request that will hit the /api/products post request
+        $.post("/api/products", {
+            vendorName: vendorName,
+            productName: productName,
+            description: description
+        }).then(function (data) {
+            // Logging data to the console for giggles
+            console.log(data);
+            // Redirecting the user to the all-events page
+            window.location.replace("/all-events");
+        });
+    }
 });
