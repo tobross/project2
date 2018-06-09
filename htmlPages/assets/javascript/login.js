@@ -1,27 +1,27 @@
 $(document).ready(function () {
 
-    // var emailInput = $("#loginName");
-    // var passwordInput = $("#loginPassword");
+    var emailInput = $("#loginName");
+    var passwordInput = $("#loginPassword");
 
-    // emailInput.val("foo@bar.com");
-    // passwordInput.val("password");
+    emailInput.val("foo@bar.com");
+    passwordInput.val("password");
 
     // $("#submits").on("click", function (event) {
-    //     event.preventDefault();
+        event.preventDefault();
 
-    //     var userData = {
-    //         email: emailInput.val().trim(),
-    //         password: passwordInput.val().trim()
-    //     }
+        var userData = {
+            email: emailInput.val().trim(),
+            password: passwordInput.val().trim()
+        }
 
-    //     if (!userData.email || !userData.password) {
-    //         return;
-    //     }
+        if (!userData.email || !userData.password) {
+            return;
+        }
 
-    //     loginUser(userData.email, userData.password);
+        loginUser(userData.email, userData.password);
 
-    //     emailInput.val("");
-    //     passwordInput.val("");
+        // emailInput.val("");
+        // passwordInput.val("");
     // });
 
 
