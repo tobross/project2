@@ -6,7 +6,7 @@ $(document).ready(function () {
     emailInput.val("foo@bar.com");
     passwordInput.val("password");
 
-    // $("#submits").on("click", function (event) {
+    $("#submits").on("click", function (event) {
         event.preventDefault();
 
         var userData = {
@@ -14,15 +14,13 @@ $(document).ready(function () {
             password: passwordInput.val().trim()
         }
 
-        if (!userData.email || !userData.password) {
-            return;
-        }
+        validateLoginForm(userData.email, userData.password);
 
         loginUser(userData.email, userData.password);
 
-        // emailInput.val("");
-        // passwordInput.val("");
-    // });
+        emailInput.val("");
+        passwordInput.val("");
+    });
 
 
     function loginUser(email, password) {
@@ -37,32 +35,20 @@ $(document).ready(function () {
         });
     }
 
-    $("#submits").on("click", validateLoginForm);
+    // $("#submits").on("click", validateLoginForm);
     $("#loginName").on("input", function(){
         $(this).removeClass("is-danger");
         $("#loginNameHelp").hide()
     });
-    $("#submits").on("click", validateLoginForm);
+    // $("#submits").on("click", validateLoginForm);
     $("#loginPassword").on("input", function(){
         $(this).removeClass("is-danger");
         $("#loginPasswordHelp").hide()
     });
-
-    // $("#navigation").on("change", function () {
-    //     console.log("redirect func running");
-    //     if (this.value === "events") {
-    //         window.location = "event.html"
-    //     } else if (this.value === "vendors") {
-    //         window.location = "vendor.html"
-    //     } else {
-    //         window.location = "landing.html"
-    //     }
-    // });
-
 });
 
 
-function validateLoginForm() {
+function validateLoginForm(username, password) {
 
     var username = $("#loginName").val().trim();
     var password = $("#loginPassword").val().trim();
