@@ -1,7 +1,7 @@
 {
   "name": "post-author-joins",
   "version": "1.0.0",
-  "description": "",
+  "description": "<img src=\"https://raw.githubusercontent.com/tobross/project2/master/htmlPages/assets/images/logo.png\" alt=\"drawing\" style=\"display:block; margin: auto auto\" width=\"400px\"/>",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,13 +12,24 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "base-64": "^0.1.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "express-session": "^1.15.6",
     "mysql2": "^1.3.6",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "passport-openid": "^0.4.0",
     "sequelize": "^4.3.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobross/project2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tobross/project2/issues"
+  },
+  "homepage": "https://github.com/tobross/project2#readme"
 }

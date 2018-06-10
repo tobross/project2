@@ -1,20 +1,36 @@
 var path = require("path");
 
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../htmlPages/landing.html"));
   });
 
-  app.get("/event", function(req, res) {
+  app.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../htmlPages/login.html"));
+  });
+
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../htmlPages/signup.html"));
+  });
+
+  app.get("/mission", function(req, res) {
+    res.sendFile(path.join(__dirname, "../htmlPages/mission.html"));
+  });
+
+  // ***** REQUIRES LOGIN *****
+
+  app.get("/event", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../htmlPages/event.html"));
   });
 
-  app.get("/vendor", function(req, res) {
+  app.get("/vendor", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../htmlPages/vendor.html"));
   });
 
-  app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../htmlPages/login.html"));
+  app.get("/all-events", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../htmlPages/all-events.html"));
   });
 }

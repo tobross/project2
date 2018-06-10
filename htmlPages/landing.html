@@ -1,76 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>M2M Landing</title>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.css' />
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Market to Market</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway" rel="stylesheet">
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/landingstyles.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/nav.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="./assets/images/marketMT.png">
+
 </head>
+
 <body>
-        <div class="row navbar">
-                <div class="two columns navbar" id="logo">
-                  <img src="/assets/images/m2m.png" alt="logo" height="45" width="45">
-                </div>
-                <div class="eight columns navbar" id="navblank">
-                    <h3>Market To Market</h3>
-                </div>
-                <div class="two columns navbar" id="Nav">
-                  <!-- <form> -->
-                    <select class="u-full-width" id="navigation">
-                      <option class="option" value="pick">Navigate to:</option>
-                      <option class="option" value="home">Home</option>
-                      <option class="option" value="events">Events</option>
-                      <option class="option" value="vendors">Vendors</option>
-                    </select>
-                  <!-- </form> -->
-                </div>
-              </div>
+  <header>
+    <!-- BEGINING OF NAV SECTION -->
+
+    <div class="navbar">
+
+      <a href="/" id="homeUrl">
+        <div class="homeIconAni">
+          <img id="homeIcon" src="./assets/images/home.png" alt="Home">
+          <span id="homeText">HOME</span>
+      </a>
+      </div>
+      <!-- if loggedout offer login, if loggedin show username -->
+      <!-- USER is dummytext -->
+      <a href="#" id="userUrl">
+        <div class="homeIconAni">
+          <img id="userIcon" src="./assets/images/usericonOP.png" alt="User">
+          <span id="userText">USER</span>
+      </a>
+      </div>
+      <a href="/all-events" id="eventUrl">
+        <div class="homeIconAni">
+          <img id="eventIcon" src="./assets/images/calendar.png" alt="User">
+          <span id="eventsText">EVENTS</span>
+      </a>
+      </div>
+      <!-- Hide if not logged in -->
+      <a href="/logout" id="logoutUrl">
+        <div class="homeIconAni">
+          <img id="exitIcon" src="./assets/images/exit.png" alt="User">
+          <span id="logoutText">LOGOUT</span>
+      </a>
+      </div>
+    </div>
+
+    <!-- END OF NAV SECTION -->
+  </header>
+
+  <div class="notHeader">
     <div class="row">
-        <div class="twelve columns">
-            <div class="card landing">
-                <h3>Welcome to M2M</h3>
-            <p>
-                    Bacon ipsum dolor amet short ribs brisket venison rump drumstick pig sausage prosciutto chicken spare ribs salami picanha doner. Kevin capicola sausage, buffalo bresaola venison turkey shoulder picanha ham pork tri-tip meatball meatloaf ribeye. Doner spare ribs andouille bacon sausage. Ground round jerky brisket pastrami shank.
-            </p>
-        </div>
+
+      <div class="twelve columns" id="whiteSpace">
+
+        <img src="./assets/images/logo2distress.png" id="logoBox" alt="">
+
+
+      </div>
     </div>
-    </div>
+    <br>
     <div class="row">
-        <div class="six columns">
-            <a href="vendor">
-            <div class="card vendor">
-            <h3>
-                Vendor
-            </h3>
-            <p>
-                Update your vendor profile and seek out your fame by sponsoring events!
-            </p>
-        </div>
-        </a>
-        </div>
-        <div class="six columns">
-            <a href="event">
-            <div class="card event">
-            <h3>
-                Host an Event
-            </h3>
-            <p>
-                Here you can outline your event and let the vendors come to you!
-            </p>
-        </div>
-        </a>
-        </div>
+      <br style="margin-bottom:250px">
+      <div class="two-thirds column" style="text-align: center">
+        <h4>What is Market to Market?</h4>
+        &nbsp&nbsp&nbsp&nbsp&nbspMarket to Market is a community-driven platform for listing and advertising events to advertisers
+        themselves. Whether it's a book club, a small parent-teacher association gathering or a sold-out concert hall, Market
+        to Market will be a catalyst for agencies to find and connect with you on your own terms.<br> 
+        <a href="/mission"><div class="button" style="margin-top: 10px">
+        Read our mission statement</div></a>
+
+
+      </div>
     </div>
-    <div class="footer">
-            <div class="row">
-              <div class="two columns"></div>
-              <div class="eight columns">
-                <h6>Market to Market © Group Best 2018</h6>
-              </div>
-              <div class="two columns"></div>
-            </div>
-          </div>
-    <script src="/assets/javascript/landing.js"></script>
+  </div>
+
+  <div class="container">
+
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <div class="row">
+      <div class="two-thirds column" style="text-align: center">
+        <h4>Choose your experience</h4>
+        <p>Accounts at Market to Market are split into two categories to simplify your experience when browsing and creating
+          events. This time you may be hosting an event, but next time you may be looking to self promote. Whatever it is,
+          we have you covered.</p>
+      </div>
+    </div>
+    <div class="row"><a href="event">
+      <div class="one-half column" style="margin-right: 7px" id="landingBox blue">Host
+        <br>
+        <p style="font-weight: 100; padding: 0 10px 0">
+          <br> Get your event noticed, benefit from advertisers who desperately want to meet your attendees.</p>
+        
+          <div class="button" id="HostButton">READ ON</div>
+        </a>
+      </div>
+      <a href="vendor">
+      <div class="one-half column" style="margin-left: 7px" id="landingBox pink">Business
+        <br>
+        <p style="font-weight: 100; padding: 0 10px 0">
+          <br> Connect with local events through a built a modern offers system. Simple. Quick. Easy. Real results. </p>
+        
+          <div class="button" id="BusinessButton">READ ON</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <footer style="text-align: center; font-size: 10px">Market to Market &copy 2018 </footer>
+  <script src="./assets/javascript/landing.js"></script>
 </body>
+
 </html>

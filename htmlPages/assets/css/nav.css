@@ -1,0 +1,100 @@
+
+
+.navbar {
+  position: relative;
+  z-index: 3;
+  width: 100vw;
+  height: 40px;
+  background-color: #FFEDE5;
+ background-image: url(../images/h1background.png);
+ background-blend-mode: luminosity;
+ filter: brightness(99%);
+ filter: blur(.5px);
+ filter: drop-shadow(10px 10px 30px #000000b9);
+}
+#homeIcon, #userIcon, #eventIcon, #exitIcon {
+/* padding: 10px 5px 5px; */
+margin: 0px;
+height: 30px;
+width: 30px;
+filter: contrast(100%);
+/* background: #0000001e; */
+/* testing animations */
+
+-webkit-transition: all 1s ease-in-out;
+-moz-transition: all 1s ease-in-out;
+-o-transition: all 1s ease-in-out;
+transition: all 1s ease-in-out;
+transition: all 1s ease-in-out;
+
+}
+
+#homeIcon:hover, #userIcon:hover, #eventIcon:hover, #exitIcon:hover {
+ filter: invert(50%);
+ /* width: 300px; */
+    
+}
+
+
+ .homeIconAni {
+   padding: 5px 0px 10px 0px;
+  height: 30px;
+  width: 30px;
+  -webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
+transition: width 1s;
+position: relative;
+float: left;
+color: #2c2c2c;
+}
+#homeText, #userText, #eventsText, #logoutText {
+ position: relative;
+ line-height: 20px;
+ top: -4px;
+ z-index: 1;
+ font-size: 13px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: #000;
+  text-decoration: none;
+
+}
+
+.homeIconAni:hover, .icon2, .icon3, .icon4 {
+  width: 100px;
+}
+/* 
+.homeIconAni:hover {
+  height: 30px;
+  width: 200px;
+  filter: invert(50%);
+  }  */
+
+header {
+  width: 100%;
+  height: 35px !important;
+}
+.notHeader {
+  position: relative;
+  z-index: 4;
+  background-image: url('../images/test.jpg');
+background-size: cover;
+width: 100%;
+height: 100%;
+color: rgb(0, 0, 0);
+display: flex;
+text-align: center;
+align-content: center;
+align-items: center;
+filter: sepia(40%);
+filter: brightness(70%);
+filter: blur(40%);
+filter: contrast(90%);
+margin-bottom: 50px;
+filter: drop-shadow(5px 5px 15px #0000009a);
+
+}
