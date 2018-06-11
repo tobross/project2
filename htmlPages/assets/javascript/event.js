@@ -18,16 +18,23 @@ $(document).ready(function () {
             category: eventCategory.val().trim(),
             description: eventDetails.val().trim()
         }
-        // Calling the addEvent function with the paramaters
-        // eventName, date, location, category, and description
-        addEvent(eventData.eventName, eventData.date, eventData.location, eventData.category, eventData.description);
-        // After addEvent is called the inputs are cleared
-        eventTitle.val("");
-        eventDate.val("");
-        eventLocation.val("");
-        eventCategory.val("");
-        eventDetails.val("");
+        
+        //Client Input Validation
+        if (validateEventForm(eventData.eventName, eventData.date, eventData.location, eventData.description)) {
+            // Calling the addEvent function with the paramaters
+            // eventName, date, location, category, and description
+            addEvent(eventData.eventName, eventData.date, eventData.location, eventData.category, eventData.description);
+
+            //After addEvent is called the inputs are cleared
+            eventTitle.val("");
+            eventDate.val("");
+            eventLocation.val("");
+            eventCategory.val("");
+            eventDetails.val("");
+        };
+
     });
+
     // The addEvent function
     function addEvent(eventName, date, location, category, description) {
         // Post request that will hit the /api/events post request
@@ -48,3 +55,32 @@ $(document).ready(function () {
         });
     }
 });
+
+//Client Input Validation function
+function validateEventForm(eventTitle,eventDate, eventLocation,eventDetails) {
+
+    var isValidForm = true;
+   
+    if (eventTitle == "") {
+        $("#eventTitle").addClass("is-danger");
+        $("#eventNameHelp").show();
+        isValidForm = false;
+    }
+    if (eventDate == "") {
+        $("#eventDate").addClass("is-danger");
+        $("#eventDateHelp").show();
+        isValidForm = false;
+    }
+    if (eventLocation == "") {
+        $("#eventLocation").addClass("is-danger");
+        $("#eventLocationHelp").show();
+        isValidForm = false;
+    }
+    if (eventDetails == "") {
+        $("#eventDetails").addClass("is-danger");
+        $("#eventDetailsHelp").show();
+        isValidForm = false;
+    }
+    
+    return isValidForm;
+};
