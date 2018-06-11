@@ -8,7 +8,7 @@ $(document).ready(function () {
     var eventDetails = $("#eventDetails");
 
     // When user adds a new event run this
-    $(".button-primary").on("click", function (event) {
+    $("#eventSubmitBtn").on("click", function (event) {
         event.preventDefault();
         // Setting eventData to the input values
         var eventData = {
