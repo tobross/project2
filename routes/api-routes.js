@@ -25,11 +25,4 @@ module.exports = function (app) {
         console.log("theRoute");
     });
 
-    // app.get("/api/route-getter/:route", function(req, res) {
-    //     theRoute = "/" + req.params.route;
-    //     console.log("theRoute");
-    //     console.log(theRoute);
-    //     console.log("theRoute");
-    // });
-
 }
