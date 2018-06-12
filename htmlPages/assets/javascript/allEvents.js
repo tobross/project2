@@ -10,8 +10,20 @@ $(document).ready(function () {
 
     function buildEventCard() {
         eventsGoHere.empty();
-        $.get("/api/events", function (data) {
-            for (var i = 0; i < data.length; i++) {
+        $.get("/api/all-events", function (data) {
+            var eventData = data.ResultsArr;
+            console.log(data);
+            for (var i = 0; i < eventData.length; i++) {
+                console.log("DATA");
+                console.log(data.ResultsArr[i].UserId);
+                console.log("DATA");
+
+                if(data.ResultsArr[i].UserId === data.userId) {
+                    console.log("Match");
+                }
+                else {
+                    console.log("No Match");
+                }
 
                 // Creating the rows that will be in the event card
                 // Row One
@@ -44,22 +56,22 @@ $(document).ready(function () {
                 var descriptionWrapper = $("<div>");
                 descriptionWrapper.addClass("descriptionWrapper");
 
-                // Creates the event name div with text (data)
+                // Creates the event name div with text (data.ResultsArr)
                 var eventName = $("<div>");
                 eventName.addClass("eventName");
-                eventName.text(data[i].eventName);
-                // Creates the event location div with text (data)
+                eventName.text(data.ResultsArr[i].eventName);
+                // Creates the event location div with text (data.ResultsArr)
                 var eventLocation = $("<div>");
                 eventLocation.addClass("eventLocation");
-                eventLocation.text(data[i].location);
-                // Creates the event date div with text (data)
+                eventLocation.text(data.ResultsArr[i].location);
+                // Creates the event date div with text (data.ResultsArr)
                 var eventDate = $("<div>");
                 eventDate.addClass("eventDate");
-                eventDate.text(data[i].date);
-                // Creates the event descriptoin div with text (data)
+                eventDate.text(data.ResultsArr[i].date);
+                // Creates the event descriptoin div with text (data.ResultsArr)
                 var eventDescription = $("<div>");
                 eventDescription.addClass("nine columns eventDescription");
-                eventDescription.text(data[i].description);
+                eventDescription.text(data.ResultsArr[i].description);
 
                 var sponsorButton = $("<button>");
                 sponsorButton.addClass("three columns sponsor-button");
@@ -75,14 +87,17 @@ $(document).ready(function () {
                 vendorNameInput.addClass("six columns");
                 vendorNameInput.attr("id", "vendor-name-input");
                 vendorNameInput.attr("type", "text");
+                vendorNameInput.attr("placeholder", "Company Name");
 
                 var productNameInput = $("<input>");
                 productNameInput.addClass("six columns");
                 productNameInput.attr("id", "product-name-input");
                 productNameInput.attr("type", "text");
+                productNameInput.attr("placeholder", "Product");
 
                 var description = $("<textarea>");
                 description.attr("id", "vendor-description");
+                description.attr("placeholder", "Description");
 
                 var sponsorEventBtn = $("<button>");
                 sponsorEventBtn.attr("id", "sponsor-event-btn");

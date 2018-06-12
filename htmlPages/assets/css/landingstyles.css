@@ -8,13 +8,12 @@ body, html {
 
 
 
-.notHeader {
+.container {
   background-image: url('../images/test.jpg');
   background-size: cover;
-  width: 100%;
-  height: 100%;
+  size: unset;
   color: rgb(0, 0, 0);
-  display: flex;
+  display: flow-root;
   text-align: center;
   align-content: center;
   align-items: center;
@@ -24,49 +23,13 @@ body, html {
   filter: contrast(90%);
   margin-bottom: 50px;
   filter: drop-shadow(5px 5px 15px #0000009a);
+  align-self: center;
   }
-  
-h1 {
-  color: rgb(22, 22, 22);
-  text-shadow: rgb(133, 133, 130) 2px 2px;
-  font-size: 40px;
-  margin-left: 50px;
-  padding-top: 25px;
-  width: 200px;
-  height: 130px;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  display: block;
-  border: 2px #000 solid;
-  filter: sepia(100%);
-  filter: blur(.2px); 
-  background-color: #fff;
-  font-weight: 900;
-  line-height: 20px;
-  padding-top: 50px;
-}
-p {
-  margin-bottom: 50px;
-}
-h3 {
-  display: flex;
-  flex-wrap: inherit;
-  text-shadow: #000 2px 2px;
-  background-color: #ccc;
-  display: block;
-  font-size: 2.5em;
-}
-
-
-#logoBox {
-  width: 30vw;
-  padding-top: 50px;
-
-
-}
+  #logoBox {
+    width: 20vw;
+    padding: 50px;
+  }
 #whiteSpace {
-  width: 100%;
   position: absolute;
   top: 0px;
   color: #000;
@@ -74,8 +37,17 @@ h3 {
   padding-top: 15px;
   font-size: 1em;
 }
+#objective {
+  padding: 100px;
+  padding-top: 30%;
+  align-content: center;
+  padding-bottom: 4%;
+}
 
-
+}
+p {
+  margin-bottom: 50px;
+}
 
 #landingBox\ blue, #landingBox\ pink  {
 height: 35vh;
