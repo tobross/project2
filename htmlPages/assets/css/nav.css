@@ -1,5 +1,10 @@
 
-
+#navLogo{
+  position: absolute;
+  left: 50%;
+  height: 30px;
+  margin-left: -75px
+}
 .navbar {
   position: relative;
   z-index: 3;
