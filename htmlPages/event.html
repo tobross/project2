@@ -4,19 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
-    <title>Market to Market - Event Page</title>
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/skeleton-framework/1.1.1/skeleton.css' />
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <title>Market to Market</title>
     <!-- Favicon–––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="shortcut icon" type="image/png" href="./assets/images/marketMT.png">
 </head>
 
-<body>
-    <!-- <div class="row navbar">
+<div class="row navbar">
     <div class="two columns navbar" id="logo">
         <img src="./assets/images/m2m.png" alt="logo" height="45" width="45">
     </div>
@@ -24,85 +22,51 @@
         <h3>Market To Market</h3>
     </div>
     <div class="two columns navbar" id="Nav">
-    <form>
-    <select class="u-full-width" id="navigation">
+        <!-- <form> -->
+        <select class="u-full-width" id="navigation">
             <option class="option" value="pick">Navigate to:</option>
             <option class="option" value="home">Home</option>
             <option class="option" value="events">Events</option>
             <option class="option" value="vendors">Vendors</option>
         </select>
-    </form>
+        <!-- </form> -->
     </div>
-</div> -->
-    <main>
-        <div class="container">
+</div>
+<main>
+    <div class="container">
 
-            <div class="columns is-centered">
-                <div class="column">
-                    <h3>Create an Event</h3>
-                </div>
+        <div class="row">
+            <div class="twelve columns">
+                <h3>Create an Event</h3>
             </div>
+        </div>
 
-            <div class="columns is-centered">
-                <div class="column" id="formCreateText">To publish your event on Market to Market, please complete the below application. </div>
-            </div>
-            <br>
-            <form id="eventForm">
-                <div class="container">
-
-            <!-- Title Input -->
-                <div class="columns is-centered">
-                    <div class="column is-half">
-                        <label for="eventTitle">Event Title</label>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control has-icons-left">
-                                    <input class="input is-dark form-control" type="text" placeholder="Event Name" id="eventTitle" required="">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-users"></i>
-                                    </span>
-                                </div>
-                                <p class="help is-danger" style="display: none" id="eventNameHelp">This field is required</p>
-                            </div>
+        <div class="row">
+            <div class="twelve columns" id="formCreateText">To publish your event on Market to Market, please complete the below application. </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="twelve columns">
+                <form>
+                    <div class="row">
+                        <div class="six columns">
+                            <label for="eventTitle">Event Title</label>
+                            <input class="u-full-width" type="text" placeholder="Private Event" id="eventTitle">
                         </div>
                     </div>
-                </div>
 
-                <!-- Date Input -->
-                <div class="columns is-centered">
-                    <div class="column is-half">
-                        <label for="eventDate">Date of the Event</label>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control has-icons-left">
-                                    <input class="input is-dark form-control" type="date" id="eventDate" required="">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-calendar-alt"></i>
-                                    </span>
-                                </div>
-                                <p class="help is-danger" style="display: none" id="eventDateHelp">This field is required</p>
-                            </div>
+                    <div class="row">
+                        <div class="six columns">
+                            <label for="eventDate">Date of the Event</label>
+                            <input class="u-full-width" type="date" id="eventDate">
                         </div>
                     </div>
-                </div>
-
-                <!-- Location Input -->
-                <div class="columns is-centered">
-                    <div class="column is-half">
-                        <label for="eventLocation">Location</label>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control has-icons-left">
-                                    <input class="input is-dark form-control" type="text" id="eventLocation" required="">
-                                    <span class="icon is-small is-left">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </span>
-                                </div>
-                                <p class="help is-danger" style="display: none" id="eventLocationHelp">This field is required</p>
-                            </div>
+                    <div class="row">
+                        <div class="six columns">
+                            <label for="eventLocation">Location</label>
+                            <input class="u-full-width" type="text" placeholder="123 Best Street, Unit 123, Austin, TX" id="eventLocation">
                         </div>
                     </div>
-                </div>
 
                 <!-- Image -->
                 <div class="columns is-centered">
@@ -124,29 +88,15 @@
                             </label>
                         </div>
                     </div>
-                </div>
-
-                <!-- Event Details -->
-                <div class="columns is-centered">
-                    <div class="column is-half">
-                        <label for="eventLocation">Event Details</label>
-                        <div class="field-body">
-                            <div class="field">
-                                <div class="control">
-                                    <textarea class="textarea is-dark" type="text" placeholder="Event Details" id="eventDetails" required=""></textarea>
-                                </div>
-                            </div>
-                            <p class="help is-danger" style="display: none" id="eventDetailsHelp">This field is required</p>
+                    <div class="row">
+                        <div class="eight columns">
+                            <label for="eventDetails">Event Details</label>
+                            <textarea class="u-full-width" placeholder="Event details here …" id="eventDetails"></textarea>
+                            <input class="button-primary" type="submit" value="Submit">
                         </div>
                     </div>
-                </div>
-               
-                <div class="columns is-centered">
-                    <div class="column">
-                        <input class="button is-dark" type="submit" value="Submit" id="eventSubmitBtn">
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </main>
 
