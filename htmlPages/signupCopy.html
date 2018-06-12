@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market to Market - Sign up</title>
+  <link rel="stylesheet" type="text/css" href="./assets/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="./assets/css/signup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <!-- Favicon–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="shortcut icon" type="image/png" href="./assets/images/marketMT.png">
+</head>
+
+<body>
+  <header>
+   <form>
+    <div class="container">
+      <div class = "columns">
+        <div class="column" id="whiteSpace">
+          <img src="./assets/images/logo2distress.png" id="logoBox" alt="">
+
+              <div class="columns login">
+                <div class="column is-half">
+                  <label for="firstName"><strong>First Name: </strong></label>
+                  <div class="field-body">
+                      <div class="field">
+                        <div class="control has-icons-left">
+                          <input class= "input is-dark form-control" type="text" placeholder="John" id="firstName" required="">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                          </span>
+                          <p class="help is-danger" style="display: none" id="firstNameHelp">This field is required</p>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="column is-half">
+                    <label for="lastName"><strong>Last Name: </strong></label>
+                    <div class="field-body">
+                        <div class="field">
+                          <div class="control has-icons-left">
+                            <input class= "input is-dark form-control" type="text" placeholder="Smith" id="lastName" required="">
+                            <span class="icon is-small is-left">
+                              <i class="fas fa-user"></i>
+                            </span>
+                            <p class="help is-danger" style="display: none" id="lastNameHelp">This field is required</p>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="columns login">
+                  <div class="column">
+                    <label for="emailInput"><strong>E-mail: </strong></label>
+                    <div class="field-body">
+                        <div class="field">
+                          <div class="control has-icons-left">
+                            <input class= "input is-dark form-control" type="email" placeholder="test@mailbox.com" id="emailInput" required="">
+                            <span class="icon is-small is-left">
+                              <i class="fas fa-envelope"></i>
+                            </span>
+                            <p class="help is-danger" style="display: none" id="emailInputHelp">This field is required</p>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                      <label for="confirmSignupEmail"><strong>Confirm E-mail: </strong></label>
+                        <div class="field-body">
+                          <div class="field">
+                            <div class="control has-icons-left">
+                              <input class= "input is-dark form-control" type="email" placeholder="test@mailbox.com" id="confirmSignupEmail" required="">
+                              <span class="icon is-small is-left">
+                                <i class="fas fa-envelope"></i>
+                              </span>
+                              <p class="help is-danger" style="display: none" id="confirmSignupEmailHelp">This field is required</p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+              </div>
+
+              <div class="columns login">
+                <div class="column">
+                  <label for="password"><strong>Password: </strong></label>
+                  <div class="field-body">
+                    <div class="field">
+                      <div class="control has-icons-left">
+                        <input class= "input is-dark form-control" type="password" placeholder="password:  min 8 characters" id="password" required="">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <p class="help is-danger" style="display: none" id="passwordHelp">This field is required</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <label for="passwordConf"><strong>Confirm Password: </strong></label>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control has-icons-left">
+                          <input class= "input is-dark form-control" type="password" placeholder="confirm password" id="passwordConf" required="">
+                          <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                          </span>
+                          <p class="help is-danger" style="display: none" id="passwordConfHelp">This field is required</p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="columns">
+                <div class="column">
+                  <input class="button is-dark button-primary submitBtn" id="submits" type="submit" value="Submit">
+                </div>
+              </div>
+           
+      </div>
+    </div>
+  </div>
+</form>  
+</header>
+  <footer>
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>Market to Market &copy 2018</p>
+        </div>
+      </div>
+  </footer>
+
+  <script src="./assets/javascript/signupCopy.js" type="text/javascript"></script>
+</body>
+
+</html>

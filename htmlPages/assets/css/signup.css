@@ -24,6 +24,7 @@ header {
   filter: contrast(90%);
   margin-bottom: 0px;
   filter: drop-shadow(5px 5px 15px #0000009a);
+  padding-top: 5%;
 }
 
 
@@ -124,3 +125,6 @@ footer {
   font-size: 10px;
   color: #fff;
 }
+.submitBtn {
+  margin-bottom: 20px;
+  }
