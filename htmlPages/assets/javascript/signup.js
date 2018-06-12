@@ -2,42 +2,42 @@ $(document).ready(function () {
 
     $(".button-primary").on("click", function (event) {
         event.preventDefault();
+        // If the sign up passes validation move forward with
+        // grabbing user info
         if (validateForm() === true) {
 
-                var firstName = $("#firstName").val().trim();
-                var lastName = $("#lastName").val().trim();
-                var email = $("#emailInput").val().trim();
-                var password = $("#password").val().trim();
-
-                var username = firstName + " " + lastName;
-
-                console.log(firstName);
-                console.log(lastName);
-                console.log(username);
-                console.log(email);
-                console.log(password);
-
-                addUser(username, email, password);
-
+            var firstName = $("#firstName").val().trim();
+            var lastName = $("#lastName").val().trim();
+            var email = $("#emailInput").val().trim();
+            var password = $("#password").val().trim();
+            // Setting the username to fistname lastname
+            var username = firstName + " " + lastName;
+            // Calling the addUser function with username, email, and password
+            // as arguments
+            addUser(username, email, password);
         } else {
+            // Logging when validation fails for giggles
             console.log("failed validation");
         }
 
     });
 
+    // addUser is the function that will sign up and login the user when called
     function addUser(username, email, password) {
+        // This post will sign the user up
         $.post("/api/users", {
             username: username,
             email: email,
             password: password
-        }).then(function(data) {
-            console.log("Logging user in");
+        }).then(function (data) {
+            // This post will run after the user has be signed up
+            // and log the user in
             $.post("/api/login", {
                 email: email,
                 password: password
-            }).then(function(data) {
-                console.log(data);
-                console.log("did this work");
+            }).then(function (data) {
+                // Send the user to the page they were going to before they
+                // needed to sign up
                 window.location.replace(data);
             });
         });
@@ -54,8 +54,8 @@ $(document).ready(function () {
 
         if (fname == "") {
             window.alert("First Name cannot be empty.");
-                $("#firstName").css("border", "red 4px solid");
-        
+            $("#firstName").css("border", "red 4px solid");
+
             return false;
         }
         if (lname == "") {
@@ -135,15 +135,4 @@ $(document).ready(function () {
         }
         return true;
     };
-
-    $("#navigation").on("change", function () {
-        console.log("redirect func running");
-        if (this.value === "events") {
-            window.location = "event.html"
-        } else if (this.value === "vendors") {
-            window.location = "vendor.html"
-        } else {
-            window.location = "landing.html"
-        }
-    });
 });

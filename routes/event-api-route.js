@@ -32,7 +32,6 @@ module.exports = function (app) {
       eventName: req.body.eventName,
       date: req.body.date,
       location: req.body.location,
-      category: req.body.category,
       description: req.body.description
     }).then(function (result) {
       res.json(result);
