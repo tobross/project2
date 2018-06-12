@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Tracks the route of the hostButton when user is not logged in
     $("#HostButton").on("click", function () {
         console.log("hostButtonCLicked");
-        $.get("/api/route-getter/event", function (result) {
+        $.get("/api/route-getter/event", function(result) {
             console.log("result from api/rpute-getter/event");
             console.log(result);
             console.log("result from api/rpute-getter/event");

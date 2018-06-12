@@ -35,10 +35,12 @@ $(document).ready(function () {
         });
     }
 
+    // $("#submits").on("click", validateLoginForm);
     $("#loginName").on("input", function(){
         $(this).removeClass("is-danger");
         $("#loginNameHelp").hide()
     });
+    // $("#submits").on("click", validateLoginForm);
     $("#loginPassword").on("input", function(){
         $(this).removeClass("is-danger");
         $("#loginPasswordHelp").hide()
