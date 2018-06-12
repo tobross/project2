@@ -15,7 +15,6 @@ $(document).ready(function () {
             eventName: eventTitle.val().trim(),
             date: eventDate.val().trim(),
             location: eventLocation.val().trim(),
-            category: eventCategory.val().trim(),
             description: eventDetails.val().trim()
         }
         
@@ -42,7 +41,6 @@ $(document).ready(function () {
             eventName: eventName,
             date: date,
             location: location,
-            category: category,
             description: description
         }).then(function (data) {
             // Logging data to the console for giggles
